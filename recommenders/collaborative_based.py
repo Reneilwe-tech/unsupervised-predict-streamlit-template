@@ -123,7 +123,7 @@ def collab_model(movie_list,top_n=10):
     movie_ids = pred_movies(movie_list)
     # get movie ids and ratings for top users
     df_init_users = ratings_df[ratings_df['userId']==movie_ids[0]]
-    for i in movie_ids[1:] :
+    for i in movie_ids[1:]:
         df_init_users=df_init_users.append(ratings_df[ratings_df['userId']==i])
 
     #include predictions for selected movies
@@ -164,9 +164,9 @@ def collab_model(movie_list,top_n=10):
     idx_3 = indices[indices == movie_list[2]].index[0]
 
     # Creating a Series with the similarity scores in descending order
-    rank_1 = cosine_sim[idx_1]
-    rank_2 = cosine_sim[idx_2]
-    rank_3 = cosine_sim[idx_3]
+    rank_1 = user_sim_df[idx_1]
+    rank_2 = user_sim_df[idx_2]
+    rank_3 = user_sim_df[idx_3]
 
     # Calculating the scores
     score_series_1 = pd.Series(rank_1).sort_values(ascending = False)
@@ -183,7 +183,7 @@ def collab_model(movie_list,top_n=10):
 
     for i in top_indexes[:top_n]:
         recommended_movies.append(list(movies_df[movies_df['movieId']==i]['title']))
-        
+
     #return a list of recommended movies
-    recommended_movies = [val for sublist in recommended_movies for val in sublist]   
+    recommended_movies = [value for sublist in recommended_movies for value in sublist]   
     return recommended_movies
