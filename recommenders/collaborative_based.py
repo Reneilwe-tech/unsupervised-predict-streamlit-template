@@ -39,8 +39,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 
 # Importing data
-movies_df = pd.read_csv('resources/data/movies.csv')
-ratings_df = pd.read_csv('resources/data/ratings.csv')
+movies_df = pd.read_csv('../unsupervised_data/unsupervised_movie_data/movies.csv')
+ratings_df = pd.read_csv('../unsupervised_data/unsupervised_movie_data/train.csv')
 ratings_df.drop(['timestamp'], axis=1,inplace=True)
 
 # We make use of an SVD model trained on a subset of the MovieLens 10k dataset.

@@ -44,9 +44,9 @@ from recommenders.content_based import content_model
 
 # Data Loading
 title_list = load_movie_titles('../unsupervised_data/unsupervised_movie_data/movies.csv')
-df_movies = pd.read_csv('resources/data/movies.csv')
-ratings = pd.read_csv('resources/data/ratings.csv')
-#df_train = pd.read_csv('../unsupervised_data/unsupervised_movie_data/train.csv') 
+df_movies = pd.read_csv('../unsupervised_data/unsupervised_movie_data/movies.csv')
+#ratings = pd.read_csv('resources/data/ratings.csv')
+ratings = pd.read_csv('../unsupervised_data/unsupervised_movie_data/train.csv') 
 
 # App declaration
 def main():
@@ -93,12 +93,7 @@ def main():
 
         if sys == 'Collaborative Based Filtering':
             if st.button("Recommend"):
-                # with st.spinner('Crunching the numbers...'):
-                #     top_recommendations = collab_model(movie_list=fav_movies,
-                #                                            top_n=10)
-                # st.title("We think you'll like:")
-                # for i,j in enumerate(top_recommendations):
-                #     st.subheader(str(i+1)+'. '+j)  
+ 
                 
                 try:
                     with st.spinner('Crunching the numbers...'):
