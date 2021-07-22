@@ -43,7 +43,7 @@ from recommenders.collaborative_based import collab_model
 from recommenders.content_based import content_model
 
 # Data Loading
-title_list = load_movie_titles('resources/data/movies.csv')
+title_list = load_movie_titles('../unsupervised_data/unsupervised_movie_data/movies.csv')
 df_movies = pd.read_csv('resources/data/movies.csv')
 ratings = pd.read_csv('resources/data/ratings.csv')
 #df_train = pd.read_csv('resources/data/train.csv') 
