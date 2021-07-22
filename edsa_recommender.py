@@ -93,24 +93,24 @@ def main():
 
         if sys == 'Collaborative Based Filtering':
             if st.button("Recommend"):
-                with st.spinner('Crunching the numbers...'):
-                    top_recommendations = collab_model(movie_list=fav_movies,
-                                                           top_n=10)
-                st.title("We think you'll like:")
-                for i,j in enumerate(top_recommendations):
-                    st.subheader(str(i+1)+'. '+j)  
-
-                # try:
-                #     with st.spinner('Crunching the numbers...'):
-                #         top_recommendations = collab_model(movie_list=fav_movies,
+                # with st.spinner('Crunching the numbers...'):
+                #     top_recommendations = collab_model(movie_list=fav_movies,
                 #                                            top_n=10)
-                #     st.title("We think you'll like:")
-                #     for i,j in enumerate(top_recommendations):
-                #         st.subheader(str(i+1)+'. '+j)
-                #  except:
+                # st.title("We think you'll like:")
+                # for i,j in enumerate(top_recommendations):
+                #     st.subheader(str(i+1)+'. '+j)  
 
-                #     st.error("Oops! Looks like this algorithm does't work.\
-                #               We'll need to fix it!")
+                try:
+                    with st.spinner('Crunching the numbers...'):
+                        top_recommendations = collab_model(movie_list=fav_movies,
+                                                           top_n=10)
+                    st.title("We think you'll like:")
+                    for i,j in enumerate(top_recommendations):
+                        st.subheader(str(i+1)+'. '+j)
+                 except:
+
+                    st.error("Oops! Looks like this algorithm does't work.\
+                              We'll need to fix it!")
 
 
     # -------------------------------------------------------------------
@@ -123,7 +123,7 @@ def main():
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
     #Data visualisation
-    #st.set_option('deprecation.showPyplotGlobalUse', False)
+    st.set_option('deprecation.showPyplotGlobalUse', False)
     if page_selection == "Data Visualization":
         st.title('Data Summary')
         st.image('resources/imgs/giphy.gif',use_column_width=True)
