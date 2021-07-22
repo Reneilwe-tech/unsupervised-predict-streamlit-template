@@ -115,7 +115,7 @@ def main():
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
     #Data visualisation
-    st.set_option('deprecation.showPyplotGlobalUse', False)
+    #st.set_option('deprecation.showPyplotGlobalUse', False)
     if page_selection == "Data Visualization":
         st.title('Data Summary')
         st.image('resources/imgs/giphy.gif',use_column_width=True)
