@@ -38,12 +38,12 @@ import seaborn as sns
 from wordcloud import WordCloud, STOPWORDS
 
 # Custom Libraries
-from utils.data_loader import load_movie_titles
+#from utils.data_loader import load_movie_titles
 from recommenders.collaborative_based import collab_model
 from recommenders.content_based import content_model
-
+from utils import data_loader as dl
 # Data Loading
-title_list = load_movie_titles('../unsupervised_data/unsupervised_movie_data/movies.csv')
+#title_list = load_movie_titles('resources/data/movies.csv')
 df_movies = pd.read_csv('resources/data/movies.csv')
 ratings = pd.read_csv('resources/data/ratings.csv')
 #df_train = pd.read_csv('resources/data/train.csv') 
@@ -60,6 +60,7 @@ def main():
     # -------------------------------------------------------------------
     page_selection = st.sidebar.selectbox("Choose Option", page_options)
     if page_selection == "Recommender System":
+        title_list = dl.load_movie_titles('../unsupervised_data/unsupervised_movie_data/movies.csv')       
         # Header contents
         st.write('# Movie Recommender Engine')
         st.write('### EXPLORE Data Science Academy Unsupervised Predict')
