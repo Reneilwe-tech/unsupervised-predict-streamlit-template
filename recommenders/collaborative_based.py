@@ -30,6 +30,7 @@
 # Script dependencies
 import pandas as pd
 import numpy as np
+import scipy as sp
 import pickle
 import copy
 from surprise import Reader, Dataset
